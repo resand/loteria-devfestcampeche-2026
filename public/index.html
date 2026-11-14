@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lotería DevFest Campeche</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon-180.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#F0F0F0">
+  <meta name="description" content="Tu selfie → carta de lotería hecha con Gemini. Juega con todo el DevFest Campeche 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lotería DevFest Campeche">
+  <meta property="og:description" content="Tu selfie → carta de lotería hecha con Gemini. Juega con todo el DevFest.">
+  <meta property="og:image" content="__URL__/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="__URL__/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { padding: 16px 16px 40px; max-width: 520px; margin: 0 auto; }
+    header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    header h1 { font-size: 22px; }
+    #main > * + * { margin-top: 16px; }
+    .hero { font-size: 34px; line-height: 1.05; font-weight: 700; }
+    label { display: block; font-weight: 600; margin: 12px 0 6px; }
+    select, input[type=text] { width: 100%; border: 2px solid var(--ink); border-radius: 16px; padding: 12px; background: #fff; }
+    .my-card { width: 70%; margin: 0 auto; font-size: 20px; }
+    .verse { text-align: center; font-style: italic; }
+    /* Tabla en el celular: la carta cantada grande arriba, la tabla 4×4 cabe completa con el botón (sin scroll) */
+    .board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; font-size: 9px;
+      width: min(100%, calc((100dvh - 300px) * 0.68)); margin: 0 auto; }
+    .board .card { border-radius: 10px; cursor: pointer; border-width: 1.5px; }
+    .board .card img { border-radius: 6px; border-width: 1px; }
+    .board .card .title { font-size: 1.05em; }
+    .board .card.on::after { content: ''; position: absolute; left: 50%; top: 42%; width: 62%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; background: #8B5A2Bd9; border: 3px solid #5a3a1c; box-shadow: inset -4px -4px 0 #5a3a1c55; } /* el frijolito */
+    .board .card.mine { border-color: var(--blue); border-width: 3px; }
+    .called { display: flex; gap: 14px; align-items: center; background: var(--card); border: 2px solid var(--ink); border-radius: 20px; padding: 10px 14px; }
+    .called .card { width: 74px; font-size: 7px; flex: none; }
+    .called h3 { font-size: 22px; line-height: 1.1; }
+    .called .recent { font-size: 12px; color: var(--mute); margin-top: 4px; }
+    body.playing header { margin-bottom: 8px; } body.playing #main > * + * { margin-top: 10px; }
+    #claim { position: sticky; bottom: 10px; }
+    .toast { position: fixed; left: 16px; right: 16px; bottom: 20px; text-align: center; font-weight: 700; background: var(--ink); color: #fff; border-radius: 999px; padding: 14px; transition: .3s; }
+    .toast:empty { opacity: 0; }
+    .ask { position: fixed; inset: 0; z-index: 5; display: flex; align-items: flex-end; padding: 16px; background: #1E1E1E99; }
+    .ask .box { width: 100%; max-width: 488px; margin: 0 auto; }
+    .preview[hidden] { display: none; }
+    .preview { display: block; width: 140px; aspect-ratio: 3/4; object-fit: cover; border: 2px solid var(--ink); border-radius: 12px; margin: 10px auto 0; }
+    .baking { text-align: center; font-size: 60px; animation: pulse 1s infinite alternate; }
+    @keyframes pulse { to { transform: scale(1.15); } }
+  </style>
+</head>
+<body>
+  <header><h1><span class="brace">{</span> Lotería <span class="brace">}</span></h1><span class="dots"><i></i><i></i><i></i><i></i></span></header>
+  <main id="main"></main>
+  <div class="toast" id="toast"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

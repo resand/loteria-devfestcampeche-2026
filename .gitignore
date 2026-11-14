@@ -1,0 +1,6 @@
+node_modules/
+data/
+.env
+public/privacy.html
+public/creditos/
+public/guia-creditos.pdf

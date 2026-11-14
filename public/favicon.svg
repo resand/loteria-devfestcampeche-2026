@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Carta de lotería estilo DF26: marco blanco con contorno tinta, imagen azul pastel y los 4 puntos Google -->
+  <rect x="10" y="3" width="44" height="58" rx="9" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="3"/>
+  <rect x="16" y="9" width="32" height="32" rx="5" fill="#C3ECF6" stroke="#1E1E1E" stroke-width="2.5"/>
+  <circle cx="32" cy="22" r="6.5" fill="#4285F4" stroke="#1E1E1E" stroke-width="2"/>
+  <path d="M21 39c2-7 6-9 11-9s9 2 11 9" fill="#4285F4" stroke="#1E1E1E" stroke-width="2"/>
+  <circle cx="20.5" cy="51" r="3" fill="#4285F4"/><circle cx="28.2" cy="51" r="3" fill="#EA4335"/>
+  <circle cx="35.8" cy="51" r="3" fill="#F9AB00"/><circle cx="43.5" cy="51" r="3" fill="#34A853"/>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "name": "Lotería DevFest Campeche",
+  "short_name": "Lotería",
+  "description": "Tu selfie → carta de lotería hecha con Gemini. Juega con todo el DevFest.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F0F0F0",
+  "theme_color": "#F0F0F0",
+  "lang": "es",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

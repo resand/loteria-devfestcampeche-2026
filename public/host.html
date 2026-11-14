@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lotería · Host</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon-180.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#F0F0F0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { padding: 24px; display: grid; grid-template-columns: 340px 1fr; gap: 24px; }
+    #steps button { display: block; width: 100%; text-align: left; margin-bottom: 8px; }
+    #steps button.on { background: var(--ink); color: #fff; }
+    #steps small { opacity: .6; margin-right: 8px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+    .note { font-size: 20px; line-height: 1.5; white-space: pre-line; }
+    #cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; font-size: 9px; margin-top: 12px; }
+    #cards .card { cursor: pointer; } #cards .card.off { opacity: .25; }
+    #winners li { font-size: 18px; }
+    kbd { border: 1px solid var(--mute); border-radius: 6px; padding: 0 6px; }
+    .nav { display: flex; gap: 10px; margin: 4px 0 16px; } .nav .btn { flex: 1; padding: 16px; font-size: 18px; }
+    .nav #next { flex: 2; }
+    /* Celular (el host en la mano): pasos en una tira horizontal arriba, botones grandes para el pulgar */
+    @media (max-width: 760px) {
+      body { display: block; padding: 12px; }
+      aside h2, aside p.mute { display: none; }
+      #steps { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 8px; -webkit-overflow-scrolling: touch; }
+      #steps button { width: auto; flex: none; white-space: nowrap; margin: 0; }
+      main h1 { font-size: 26px; }
+      .note { font-size: 16px; }
+      .actions .btn { flex: 1 1 45%; padding: 18px 12px; font-size: 18px; }
+      .nav { position: sticky; bottom: 8px; background: var(--bg, #F0F0F0); padding: 8px 0; } /* siempre a la mano */
+      #cards { grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <aside><h2 style="margin-bottom:16px"><span class="brace">{</span> Host <span class="brace">}</span></h2><div id="steps"></div>
+    <p class="mute" style="margin-top:16px"><kbd>→</kbd> siguiente paso · <kbd>espacio</kbd> cantar<br><a href="/screen" target="_blank">Abrir pantalla ↗</a></p></aside>
+  <main id="main"></main>
+  <script type="module" src="host.js"></script>
+</body>
+</html>
